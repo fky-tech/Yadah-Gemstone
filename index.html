@@ -135,6 +135,12 @@
     background: linear-gradient(to bottom, #FFFFFF, #f0f0f0);
     border-radius: 4px;
   }
+
+  @keyframes fade-in-out {
+    0%, 100% { opacity: 0; transform: scale(1.05); }
+    10% { opacity: 1; transform: scale(1); }
+    25% { opacity: 0; }
+  }
   
   /* Responsive improvements */
   @media (max-width: 768px) {
@@ -226,24 +232,24 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <a href="#" class="flex items-center gap-2">
-            <img src="/logo.png" alt="Yadah Logo" class="h-8 w-auto">
+            <img src="/Yadah logo_F1.png" alt="Yadah Logo" class="h-8 w-auto">
             <span class="font-semibold text-xl font-heading">Yadah Gemstone PLC</span>
           </a>
           <nav class="hidden md:flex items-center gap-8 text-sm relative">
             <a href="#home" class="hover:text-primary-500">Home</a>
             <a href="#about" class="hover:text-primary-500">About</a>
             <div class="relative group">
-              <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
-                Our Sectors
-                <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 z-50">
-                <a href="mining.html" class="block px-4 py-2 hover:bg-slate-50">Mining</a>
-                <a href="agriculture.html" class="block px-4 py-2 hover:bg-slate-50">Agriculture</a>
-                <a href="construction.html" class="block px-4 py-2 hover:bg-slate-50">Construction</a>
-                <a href="water-works.html" class="block px-4 py-2 hover:bg-slate-50">Water Works</a>
-              </div>
-            </div>
+  <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
+    Our Sectors
+    <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 z-50 space-y-2">
+    <a href="mining.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Mining</a>
+    <a href="agriculture.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Agriculture</a>
+    <a href="construction.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Construction</a>
+    <a href="water-works.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Water Works</a>
+  </div>
+</div>
             <a href="#ourapproach" class="hover:text-primary-500">Our Approach</a>
             <a href="#members" class="hover:text-primary-500">Leadership</a>
             <a href="#contact" class="hover:text-primary-500">Contact</a>
@@ -274,213 +280,99 @@
     </div>
     </header>
 
-    <!-- Hero -->
-    <section id="home" class="relative overflow-hidden h-screen flex items-center bg-gradient-to-br from-[#4674B7] via-[#355a8a] to-[#24416d]">
-  <!-- Animated Background Pattern -->
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_25%_25%,#FFFFFF_0%,transparent_50%)] bg-[radial-gradient(circle_at_75%_75%,#FFFFFF_0%,transparent_50%)]"></div>
-    <!-- Floating Elements -->
-    <div class="absolute top-10 left-4 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse" style="animation-delay: 0s;"></div>
-    <div class="absolute top-1/2 right-8 w-32 h-32 bg-white/5 rounded-full blur-2xl animate-bounce" style="animation-delay: 2s;"></div>
-    <div class="absolute bottom-10 left-1/4 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
-  </div>
+<section id="home" class="relative h-screen flex items-center bg-black">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="bg-cover bg-center absolute inset-0 animate-[fade-in-out_20s_infinite_0s]" style="background-image: url('/img1.jpg');"></div>
+        <div class="bg-cover bg-center absolute inset-0 animate-[fade-in-out_20s_infinite_5s]" style="background-image: url('/img2.jpg');"></div>
+        <div class="bg-cover bg-center absolute inset-0 animate-[fade-in-out_20s_infinite_10s]" style="background-image: url('/img3.jpg');"></div>
+        <div class="bg-cover bg-center absolute inset-0 animate-[fade-in-out_20s_infinite_15s]" style="background-image: url('/img2.jpg');"></div>
+        
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-30"></div>
+    </div>
 
-  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full h-full flex items-center">
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
-      
-      <!-- Left Content Column -->
-      <div class="lg:w-1/2 lg:max-w-lg relative flex-shrink-0">
-        <!-- Animated Entry -->
-        <div class="space-y-4 opacity-0 translate-y-8 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
-          <!-- Badge -->
-          <div class="inline-flex items-center px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-xs font-medium text-white/90">
-            <div class="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></div>
-            Established 2017
-          </div>
-          
-          <!-- Main Heading -->
-          <div class="space-y-3">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent">
-              Excellence in 
-              <span class="block">Mining, Agriculture &</span>
-              <span class="text-white">Infrastructure</span>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center space-y-6 lg:space-y-8 text-white">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+                <span class="block">Pioneering Progress in</span>
+                <span class="block text-primary-400">Ethiopia's Core Sectors</span>
             </h1>
-            <div class="h-0.5 w-20 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"></div>
+            <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
+                Yadah Gemstone PLC is a dynamic company committed to sustainable growth and innovation.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                <a href="#about" class="inline-flex items-center justify-center px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full shadow-lg transition-colors duration-300">
+                    Discover Our Story
+                </a>
+                <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stats" class="py-10 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 text-center">
+            <div>
+                <div class="text-2xl font-bold text-primary-600"><span class="stat-count" data-target="7">0</span></div>
+                <div class="text-xs text-gray-600 mt-2">Years in Business</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-primary-600"><span class="stat-count" data-target="200">0</span>+</div>
+                <div class="text-xs text-gray-600 mt-2">Hectares Farmland</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-primary-600"><span class="stat-count" data-target="26">0</span></div>
+                <div class="text-xs text-gray-600 mt-2">Combined Experience</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-primary-600"><span class="stat-count" data-target="4">0</span></div>
+                <div class="text-xs text-gray-600 mt-2">Core Sectors</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 md:py-28 bg-gradient-to-br from-gray-100 to-gray-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-16 md:grid-cols-2 items-center">
+      
+      <!-- Text Content -->
+      <div class="text-gray-700 leading-relaxed">
+        <div class="flex items-center gap-2 text-sm font-semibold text-primary-600 uppercase tracking-wider">
+          <span class="h-2 w-2 rounded-full bg-primary-600 animate-ping"></span>
+          <span>About Us</span>
+        </div>
+        <h2 class="mt-4 text-4xl md:text-5xl font-extrabold text-secondary-900 font-heading">
+          Making a Difference in Ethiopia
+        </h2>
+
+        <div class="mt-8">
+          <div class="about-content max-h-40 overflow-hidden transition-all duration-500 ease-in-out text-justify" id="aboutContent">
+            <p>Yadah Gemstone PLC is a dynamic and forward-thinking company established in 2017 with a clear vision to make a significant difference in Ethiopia's vital agriculture and mining sectors.</p>
+            <p class="mt-5">Founded by a team of experienced professionals with a combined 26 years of expertise across diverse industries, our company is committed to sustainable growth, innovation, and contributing to the economic development of the nation.</p>
+            <p class="mt-5">Our mission is to be a leader in the mining and agriculture sectors, making a tangible positive impact on the Ethiopian economy through sustainable practices and superior quality products. We aim to diversify our portfolio and leverage our expertise in construction and water works to support broader national development goals.</p>
           </div>
-          
-          <!-- Subtitle -->
-          <p class="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-md">
-            Yadah Gemstone PLC is a dynamic company making significant impact in Ethiopia's vital sectors through 
-            <span class="font-semibold text-white">sustainable growth</span> and 
-            <span class="font-semibold text-white">innovation</span>.
-          </p>
-          
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-3 pt-4">
-            <a href="#about" class="group inline-flex items-center justify-center px-6 py-3 bg-white text-[#4674B7] font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 flex-1 sm:flex-none text-sm sm:text-base">
-              <span>Discover Our Work</span>
-              <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex-1 sm:flex-none text-sm sm:text-base">
-              Contact Us
-              <svg class="w-3.5 h-3.5 ml-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-              </svg>
-            </a>
+
+          <!-- Toggle Button -->
+          <div class="mt-6">
+            <button id="aboutToggle" class="flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg">
+              <span>Read more</span>
+              <i class="fas fa-chevron-down text-sm transform transition-transform duration-300"></i>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- Right Image Column -->
-      <div class="lg:w-1/2 relative flex-shrink-0">
-        <!-- Decorative Elements -->
-        <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-        <div class="absolute -bottom-6 left-4 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-        
-        <!-- Enhanced Image Container -->
-        <div class="relative group h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] overflow-hidden">
-          <!-- Fancy Frame -->
-          <div class="absolute inset-0 -m-0.5 bg-gradient-to-br from-white/5 via-transparent to-white/5 rounded-2xl lg:rounded-3xl border border-white/20 shadow-2xl z-10 pointer-events-none animate-pulse"></div>
-          
-          <!-- Image Carousel -->
-          <div class="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 h-full">
-            <!-- Image 1 -->
-            <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out" data-slide="0">
-              <img 
-                src="/img1.jpg" 
-                alt="Mining operation in Ethiopia" 
-                class="w-full h-full object-cover"
-                loading="eager"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#424243]/60 via-transparent to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-white/20">
-                  <span class="text-xs lg:text-sm font-medium text-white">Mining Operations</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Image 2 -->
-            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="1">
-              <img 
-                src="/img2.jpg" 
-                alt="Drone precision agriculture over Ethiopian farmland" 
-                class="w-full h-full object-cover"
-                loading="eager"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#424243]/60 via-transparent to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-white/20">
-                  <span class="text-xs lg:text-sm font-medium text-white">Precision Agriculture</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Image 3 -->
-            <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="2">
-              <img 
-                src="/img3.jpg" 
-                alt="Infrastructure construction project" 
-                class="w-full h-full object-cover"
-                loading="eager"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#424243]/60 via-transparent to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-white/20">
-                  <span class="text-xs lg:text-sm font-medium text-white">Infrastructure Development</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Navigation Controls -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-            <button 
-              class="carousel-prev inline-flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white h-10 w-10 shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
-              aria-label="Previous slide"
-            >
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M15 19l-7-7 7-7"/>
-              </svg>
-            </button>
-            <button 
-              class="carousel-next inline-flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white h-10 w-10 shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
-              aria-label="Next slide"
-            >
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M9 5l7 7-7 7"/>
-              </svg>
-            </button>
-          </div>
-          
-          <!-- Progress Dots -->
-          <div class="absolute bottom-4 left-4 flex gap-1.5 z-20">
-            <button class="carousel-dot w-2 h-2 bg-white/30 hover:bg-white/50 rounded-full transition-all duration-300 cursor-pointer" data-slide="0" aria-label="Slide 1"></button>
-            <button class="carousel-dot w-2 h-2 bg-white/30 hover:bg-white/50 rounded-full transition-all duration-300 cursor-pointer" data-slide="1" aria-label="Slide 2"></button>
-            <button class="carousel-dot w-2 h-2 bg-white/30 hover:bg-white/50 rounded-full transition-all duration-300 cursor-pointer" data-slide="2" aria-label="Slide 3"></button>
-          </div>
-        </div>
+      <!-- Image -->
+      <div class="aspect-w-4 aspect-h-3 rounded-2xl shadow-xl overflow-hidden hidden md:block">
+        <img src="/img2.jpg" alt="A beautiful, polished Ethiopian gemstone" class="object-cover w-full h-full">
       </div>
     </div>
   </div>
-
-  <!-- Floating Navigation -->
-  <div class="fixed top-1/2 right-2 lg:right-4 -translate-y-1/2 space-y-3 opacity-0 lg:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300">
-    <a href="#about" class="block w-0.5 h-10 bg-white/20 rounded-full hover:bg-white/50 transition-colors duration-300"></a>
-    <a href="#projects" class="block w-0.5 h-10 bg-white/20 rounded-full hover:bg-white/50 transition-colors duration-300"></a>
-    <a href="#contact" class="block w-0.5 h-10 bg-white/20 rounded-full hover:bg-white/50 transition-colors duration-300"></a>
-  </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-10 md:grid-cols-2 md:gap-16 items-start">
-            <div>
-                <div class="flex items-center gap-2 text-sm font-medium text-primary-500">
-                <span class="h-2 w-2 rounded-full bg-primary-500"></span>
-                <span>About Us</span>
-                </div>
-                <h2 class="mt-3 text-4xl md:text-5xl font-bold leading-tight text-secondary-800 font-heading">Making a Difference in Ethiopia's Agriculture and Mining Sectors</h2>
-
-                <div class="mt-8 grid grid-cols-2 gap-6">
-                <div class="text-start">
-                    <div class="text-3xl font-bold text-primary-500"><span class="stat-count" data-target="7">0</span></div>
-                    <div class="text-sm text-gray-600 mt-1">Years in Business</div>
-                </div>
-                <div class="text-start">
-                    <div class="text-3xl font-bold text-primary-500"><span class="stat-count" data-target="200">0</span>+</div>
-                    <div class="text-sm text-gray-600 mt-1">Hectares Farmland</div>
-                </div>
-                <div class="text-start">
-                    <div class="text-3xl font-bold text-primary-500"><span class="stat-count" data-target="26">0</span></div>
-                    <div class="text-sm text-gray-600 mt-1">Years Combined Experience</div>
-                </div>
-                <div class="text-start">
-                    <div class="text-3xl font-bold text-primary-500"><span class="stat-count" data-target="4">0</span></div>
-                    <div class="text-sm text-gray-600 mt-1">Core Sectors</div>
-                </div>
-                </div>
-            </div>
-
-            <div class="text-gray-600 leading-relaxed text-justify">
-                <div class="about-content" id="aboutContent">
-                <p>Yadah Gemstone PLC is a dynamic and forward-thinking company established in 2017 with a clear vision to make a significant difference in Ethiopia's vital agriculture and mining sectors. Founded by a team of experienced professionals with a combined 26 years of expertise across diverse industries, our company is committed to sustainable growth, innovation, and contributing to the economic development of the nation.</p>
-                <p class="mt-5">Our mission is to be a leader in the mining and agriculture sectors, making a tangible positive impact on the Ethiopian economy through sustainable practices and superior quality products. We aim to diversify our portfolio and leverage our expertise in construction and water works to support broader national development goals.</p>
-                <p class="mt-5">At Yadah Gemstone PLC, we are dedicated to operating with the highest ethical standards. Our commitment extends beyond business success to include the well-being of the environment and the communities in which we operate. We employ sustainable mining and agricultural practices to minimize our ecological footprint and actively engage with local communities to ensure our operations contribute positively to their development.</p>
-                </div>
-                <div class="mt-6 flex justify-end">
-                <button id="aboutToggle" class="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-full transition-colors shadow-md">
-                    <span>Read more</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Services / Grid cards -->
     <section id="services" class="py-16 bg-slate-50">
@@ -876,7 +768,7 @@
         <div class="grid gap-10 md:grid-cols-12 text-center md:text-left">
         <div class="md:col-span-5 flex flex-col items-center md:items-start">
         <a href="#" class="flex items-center gap-3">
-        <img src="/logo.png" alt="Yadah Logo" class="h-8 w-auto">
+        <img src="/Yadah logo_F1.png" alt="Yadah Logo" class="h-8 w-auto">
         <span class="text-xl font-semibold font-heading text-white">Yadah Gemstone PLC</span>
         </a>
         <p class="mt-4 text-slate-400">Excellence in mining, agriculture, construction, and water works.<br/>Your trusted partner in sustainable development.</p>
