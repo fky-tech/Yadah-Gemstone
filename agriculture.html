@@ -111,17 +111,17 @@
             <a href="index.html#home" class="hover:text-primary-500">Home</a>
             <a href="index.html#about" class="hover:text-primary-500">About</a>
             <div class="relative group">
-              <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
-                Our Sectors
-                <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 z-50">
-                <a href="mining.html" class="block px-4 py-2 hover:bg-slate-50">Mining</a>
-                <a href="agriculture.html" class="block px-4 py-2 hover:bg-slate-50 bg-primary-50 text-primary-600 font-medium">Agriculture</a>
-                <a href="construction.html" class="block px-4 py-2 hover:bg-slate-50">Construction</a>
-                <a href="water-works.html" class="block px-4 py-2 hover:bg-slate-50">Water Works</a>
-              </div>
-            </div>
+  <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
+    Our Sectors
+    <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 z-50 space-y-2">
+    <a href="mining.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Mining</a>
+    <a href="agriculture.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Agriculture</a>
+    <a href="construction.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Construction</a>
+    <a href="water-works.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Water Works</a>
+  </div>
+</div>
             <a href="index.html#ourapproach" class="hover:text-primary-500">Our Approach</a>
             <a href="index.html#members" class="hover:text-primary-500">Leadership</a>
             <a href="index.html#contact" class="hover:text-primary-500">Contact</a>
@@ -207,148 +207,152 @@
           <p class="text-slate-600">We cultivate a diverse range of high-quality crops and spices for both domestic consumption and international export markets.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-seedling text-2xl text-primary-600"></i>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sesame -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('sesame.png');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div> <!-- overlay -->
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-seedling text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Sesame</h3>
+                <p>Premium quality sesame seeds cultivated for both domestic use and international export markets.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Sesame</h3>
-            <p class="text-slate-600">Premium quality sesame seeds cultivated for both domestic use and international export markets.</p>
-          </div>
 
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-leaf text-2xl text-primary-600"></i>
+            <!-- Mung Beans -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('mung.png');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-leaf text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Mung Beans</h3>
+                <p>Nutrient-rich mung beans grown with sustainable farming practices for optimal quality.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Mung Beans</h3>
-            <p class="text-slate-600">Nutrient-rich mung beans grown with sustainable farming practices for optimal quality.</p>
-          </div>
 
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-certificate text-2xl text-primary-600"></i>
+            <!-- Kidney Beans -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('kidney.png');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-certificate text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Kidney Beans</h3>
+                <p>High-protein kidney beans carefully cultivated and processed for maximum nutritional value.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Kidney Beans</h3>
-            <p class="text-slate-600">High-protein kidney beans carefully cultivated and processed for maximum nutritional value.</p>
-          </div>
 
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-mortar-pestle text-2xl text-primary-600"></i>
+            <!-- Spices -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('spice.png');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-mortar-pestle text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Spices</h3>
+                <p>Aromatic spices including Korarima, Cloves, Garlic, and Ginger grown in ideal conditions.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Spices</h3>
-            <p class="text-slate-600">Aromatic spices including Korarima, Cloves, Garlic, and Ginger grown in ideal conditions.</p>
-          </div>
 
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-coffee text-2xl text-primary-600"></i>
+            <!-- Coffee Beans -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('coffee.jpg');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-coffee text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Coffee Beans</h3>
+                <p>Premium Ethiopian coffee beans cultivated using traditional methods for exceptional flavor.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Coffee Beans</h3>
-            <p class="text-slate-600">Premium Ethiopian coffee beans cultivated using traditional methods for exceptional flavor.</p>
-          </div>
 
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft">
-            <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-              <i class="fas fa-wheat-alt text-2xl text-primary-600"></i>
+            <!-- Other Legumes -->
+            <div class="service-card relative rounded-xl p-6 shadow-soft text-white bg-cover bg-center" style="background-image: url('legumes.png');">
+              <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+              <div class="relative z-10">
+                <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-wheat-alt text-2xl text-white"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Other Legumes</h3>
+                <p>Various legumes including Chickpea, Navy Beans, and Soya Beans for diverse market needs.</p>
+              </div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Other Legumes</h3>
-            <p class="text-slate-600">Various legumes including Chickpea, Navy Beans, and Soya Beans for diverse market needs.</p>
           </div>
-        </div>
       </div>
     </section>
 
-    <section class="py-16 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl font-bold font-heading mb-4">Our Agricultural Approach</h2>
-          <p class="text-slate-600">We combine traditional farming wisdom with modern agricultural technology for optimal results.</p>
-        </div>
+<section class="py-16 bg-white text-secondary-900">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold mb-2">Our Agricultural Approach</h2>
+      <p class="text-secondary-600">Roadmap of how we combine traditional farming wisdom with modern technology.</p>
+    </div>
+
+    <!-- Roadmap -->
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute top-6 left-0 w-full h-1 bg-gradient-to-r from-primary-400 to-primary-600"></div>
+
+      <!-- Steps -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
         
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-tint text-3xl text-primary-600"></i>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Sustainable Irrigation</h3>
-            <p class="text-slate-600">Implementing water-efficient irrigation systems to conserve resources while maximizing yield.</p>
+        <!-- Step 1 -->
+        <div class="text-center relative">
+          <!-- Fixed circle -->
+          <div class="mx-auto mb-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold relative z-10">
+            1
           </div>
-          
-          <div class="text-center">
-            <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-recycle text-3xl text-primary-600"></i>
+          <!-- Card -->
+          <div class="bg-gradient-to-r from-primary-400 to-primary-600 p-1 rounded-xl shadow-lg">
+            <div class="bg-white rounded-xl p-6">
+              <div class="mb-4 text-3xl text-primary-500">
+                <i class="fas fa-tint"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Sustainable Irrigation</h3>
+              <p class="text-secondary-600 text-sm">Water-efficient irrigation systems to conserve resources while maximizing yield.</p>
             </div>
-            <h3 class="font-semibold text-lg mb-2">Eco-Friendly Practices</h3>
-            <p class="text-slate-600">Prioritizing environmentally responsible farming methods that protect soil health and biodiversity.</p>
-          </div>
-          
-          <div class="text-center">
-            <div class="bg-primary-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-handshake text-3xl text-primary-600"></i>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Community Partnership</h3>
-            <p class="text-slate-600">Working with local communities to create sustainable agricultural opportunities and knowledge sharing.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="py-16 bg-slate-50">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl font-bold font-heading mb-8 text-center">Our Crops & Spices</h2>
-          <div class="bg-white rounded-xl p-8 shadow-soft">
-            <ul class="grid sm:grid-cols-2 gap-4 text-slate-700">
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Sesame</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Mung Beans</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Kidney Beans</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Chickpea</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Navy Beans</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Soya Beans</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Korarima</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Cloves</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Garlic</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Ginger</span>
-              </li>
-              <li class="flex items-center">
-                <i class="fas fa-check-circle text-primary-600 mr-3"></i>
-                <span>Coffee Beans</span>
-              </li>
-            </ul>
+        <!-- Step 2 -->
+        <div class="text-center relative">
+          <div class="mx-auto mb-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold relative z-10">
+            2
+          </div>
+          <div class="bg-gradient-to-r from-primary-400 to-primary-600 p-1 rounded-xl shadow-lg">
+            <div class="bg-white rounded-xl p-6">
+              <div class="mb-4 text-3xl text-primary-500">
+                <i class="fas fa-recycle"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Eco-Friendly Practices</h3>
+              <p class="text-secondary-600 text-sm">Environmentally responsible farming methods that protect soil health and biodiversity.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Step 3 -->
+        <div class="text-center relative">
+          <div class="mx-auto mb-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold relative z-10">
+            3
+          </div>
+          <div class="bg-gradient-to-r from-primary-400 to-primary-600 p-1 rounded-xl shadow-lg">
+            <div class="bg-white rounded-xl p-6">
+              <div class="mb-4 text-3xl text-primary-500">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Community Partnership</h3>
+              <p class="text-secondary-600 text-sm">Working with local communities to create opportunities and knowledge sharing.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <footer class="py-16 border-t border-slate-700 bg-slate-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Mineral Cards</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 3D Card Styling */
+    .mineral-card {
+      perspective: 1000px;
+      min-height: 300px;
+      cursor: pointer;
+    }
+    
+    .mineral-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+    }
+    
+    .mineral-card-front,
+    .mineral-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .mineral-card-back {
+      transform: rotateY(180deg);
+    }
+    
+    .mineral-card:hover .mineral-card-inner {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen font-sans">
+  <section class="py-16 bg-slate-50" id="minerals">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold font-heading mb-4 text-secondary-800">
+          Our Minerals
+        </h2>
+        <p class="text-lg text-slate-600">
+          We specialize in the ethical extraction and export of these valuable
+          minerals, contributing to Ethiopia's economic growth while
+          maintaining the highest environmental and quality standards.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Gemstone Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-gem text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-secondary-800">Gemstone</h3>
+              <p class="text-slate-600">Precious and semi-precious stones ethically sourced for high-end markets.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-gem text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-secondary-800">Gemstone Details</h3>
+              <p class="text-slate-600">Ethically sourced precious stones with verified origins and quality certification.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-coins text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-secondary-800">Gold</h3>
+              <p class="text-slate-600">High-purity gold extracted using environmentally responsible methods and technology.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-coins text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-secondary-800">Gold Details</h3>
+              <p class="text-slate-600">99.9% pure gold with responsible extraction methods and full traceability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copper Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-industry text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Copper (Cu)</h3>
+              <p class="text-slate-600">Industrial-grade copper for a wide range of global manufacturing markets.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-industry text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Copper Details</h3>
+              <p class="text-slate-600">High-grade copper with 99.95% purity for industrial applications worldwide.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coal Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-fire text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Coal</h3>
+              <p class="text-slate-600">High-quality thermal and metallurgical coal for efficient energy production.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-fire text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Coal Details</h3>
+              <p class="text-slate-600">Low-sulfur, high-energy content coal with minimal environmental impact extraction.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lithium Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-battery-full text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Lithium</h3>
+              <p class="text-slate-600">An essential mineral for modern battery technology and renewable energy storage solutions.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-battery-full text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Lithium Details</h3>
+              <p class="text-slate-600">High-purity lithium carbonate for electric vehicle batteries and energy storage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tantalum Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-microchip text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Tantalum</h3>
+              <p class="text-slate-600">Conflict-free tantalum for high-tech electronics and specialized applications.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-microchip text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Tantalum Details</h3>
+              <p class="text-slate-600">Certified conflict-free tantalum with full supply chain transparency for electronics.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Niobium Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-atom text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Niobium</h3>
+              <p class="text-slate-600">A specialty metal for high-strength steel alloys and advanced superconductor technology.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-atom text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Niobium Details</h3>
+              <p class="text-slate-600">High-grade niobium for aerospace, automotive and superconducting magnet applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exploration Card -->
+        <div class="mineral-card">
+          <div class="mineral-card-inner">
+            <div class="mineral-card-front bg-white rounded-xl p-8 shadow-lg text-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-map-marked-alt text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Exploration</h3>
+              <p class="text-slate-600">We are continually exploring for new and undiscovered mineral deposits across Ethiopia.</p>
+            </div>
+            <div class="mineral-card-back bg-white rounded-xl p-8 shadow-lg text-center flex flex-col items-center justify-center">
+              <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-map-marked-alt text-4xl text-primary-600"></i>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Exploration Details</h3>
+              <p class="text-slate-600">Using advanced geospatial technology to identify new mineral resources across Ethiopia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -110,6 +110,20 @@
       .animated-underline:hover::after {
         width: 100%;
       }
+      
+    .perspective { perspective: 1200px; -webkit-perspective: 1200px; }
+    .preserve-3d { transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+    .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .card {
+      transform: rotateY(0deg);
+      transition: transform 1000ms ease-in-out;
+    }
+    .group:hover .card, .flipped .card {
+      transform: rotateY(180deg);
+    }
+    .face-back {
+      transform: rotateY(180deg);
+    }
     </style>
   </head>
   <body class="antialiased text-secondary-800">
@@ -124,20 +138,19 @@
             <a href="index.html#home" class="hover:text-primary-500">Home</a>
             <a href="index.html#about" class="hover:text-primary-500">About</a>
             <div class="relative group">
-              <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
-                Our Sectors
-                <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 z-50">
-                <a href="mining.html" class="block px-4 py-2 hover:bg-slate-50 bg-primary-50 text-primary-600 font-medium">Mining</a>
-                <a href="agriculture.html" class="block px-4 py-2 hover:bg-slate-50">Agriculture</a>
-                <a href="construction.html" class="block px-4 py-2 hover:bg-slate-50">Construction</a>
-                <a href="water-works.html" class="block px-4 py-2 hover:bg-slate-50">Water Works</a>
-              </div>
-            </div>
+  <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
+    Our Sectors
+    <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 z-50 space-y-2">
+    <a href="mining.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Mining</a>
+    <a href="agriculture.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Agriculture</a>
+    <a href="construction.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Construction</a>
+    <a href="water-works.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Water Works</a>
+  </div>
+</div>
             <a href="index.html#ourapproach" class="hover:text-primary-500">Our Approach</a>
             <a href="index.html#members" class="hover:text-primary-500">Leadership</a>
-            <a href="index.html#contact" class="hover:text-primary-500">Contact</a>
           </nav>
           <div class="flex items-center gap-3">
             <a href="index.html#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary-500 px-4 py-2 text-white text-sm font-medium shadow-soft hover:bg-primary-600">Contact Us</a>
@@ -228,85 +241,159 @@
 
 
     <section class="py-16 bg-slate-50" id="minerals">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-4xl font-bold font-heading mb-4 text-secondary-800">
-            Our Minerals
-          </h2>
-          <p class="text-lg text-slate-600">
-            We specialize in the ethical extraction and export of these valuable
-            minerals, contributing to Ethiopia's economic growth while
-            maintaining the highest environmental and quality standards.
-          </p>
-        </div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl font-bold font-heading mb-4 text-secondary-800">
+        Our Minerals
+      </h2>
+      <p class="text-lg text-slate-600">
+        We specialize in the ethical extraction and export of these valuable
+        minerals, contributing to Ethiopia's economic growth while
+        maintaining the highest environmental and quality standards.
+      </p>
+    </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Gemstone -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
               <i class="fas fa-gem text-4xl text-primary-600"></i>
             </div>
             <h3 class="font-bold text-lg mb-2 text-secondary-800">Gemstone</h3>
-            <p class="text-slate-600">Precious and semi-precious stones ethically sourced for high-end markets.</p>
+            <p class="text-slate-600 text-sm">Precious and semi-precious stones ethically sourced for high-end markets.</p>
           </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-coins text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2 text-secondary-800">Gold</h3>
-            <p class="text-slate-600">High-purity gold extracted using environmentally responsible methods and technology.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-industry text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Copper (Cu)</h3>
-            <p class="text-slate-600">Industrial-grade copper for a wide range of global manufacturing markets.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-fire text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Coal</h3>
-            <p class="text-slate-600">High-quality thermal and metallurgical coal for efficient energy production.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-battery-full text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Lithium</h3>
-            <p class="text-slate-600">An essential mineral for modern battery technology and renewable energy storage solutions.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-microchip text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Tantalum</h3>
-            <p class="text-slate-600">Conflict-free tantalum for high-tech electronics and specialized applications.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-atom text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Niobium</h3>
-            <p class="text-slate-600">A specialty metal for high-strength steel alloys and advanced superconductor technology.</p>
-          </div>
-
-          <div class="mineral-card bg-white rounded-xl p-8 shadow-lg text-center">
-            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i class="fas fa-map-marked-alt text-4xl text-primary-600"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Exploration</h3>
-            <p class="text-slate-600">We are continually exploring for new and undiscovered mineral deposits across Ethiopia.</p>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-primary-50 rounded-xl">
+            <i class="fas fa-gem text-6xl text-primary-600 mb-4"></i>
+            <p class="text-primary-800 font-bold text-lg">High-Value Gems</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Gold -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-coins text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Gold</h3>
+            <p class="text-slate-600 text-sm">High-purity gold extracted using eco-friendly methods and technology.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-yellow-50 rounded-xl">
+            <i class="fas fa-coins text-6xl text-yellow-600 mb-4"></i>
+            <p class="text-yellow-800 font-bold text-lg">Pure Gold</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copper -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-industry text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Copper (Cu)</h3>
+            <p class="text-slate-600 text-sm">Industrial-grade copper for global manufacturing markets.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-orange-50 rounded-xl">
+            <i class="fas fa-industry text-6xl text-orange-600 mb-4"></i>
+            <p class="text-orange-800 font-bold text-lg">Reliable Copper</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coal -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-fire text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Coal</h3>
+            <p class="text-slate-600 text-sm">Thermal and metallurgical coal for efficient energy production.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-slate-200 rounded-xl">
+            <i class="fas fa-fire text-6xl text-red-600 mb-4"></i>
+            <p class="text-slate-800 font-bold text-lg">Energy Source</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lithium -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-battery-full text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Lithium</h3>
+            <p class="text-slate-600 text-sm">Essential mineral for modern batteries and renewable energy storage.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-green-50 rounded-xl">
+            <i class="fas fa-battery-full text-6xl text-green-600 mb-4"></i>
+            <p class="text-green-800 font-bold text-lg">Battery Power</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tantalum -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-microchip text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Tantalum</h3>
+            <p class="text-slate-600 text-sm">Conflict-free tantalum for electronics and specialized applications.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-indigo-50 rounded-xl">
+            <i class="fas fa-microchip text-6xl text-indigo-600 mb-4"></i>
+            <p class="text-indigo-800 font-bold text-lg">Hi-Tech Metal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Niobium -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-atom text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Niobium</h3>
+            <p class="text-slate-600 text-sm">Specialty metal for high-strength alloys and superconductors.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-purple-50 rounded-xl">
+            <i class="fas fa-atom text-6xl text-purple-600 mb-4"></i>
+            <p class="text-purple-800 font-bold text-lg">Super Alloy</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exploration -->
+      <div class="group perspective cursor-pointer select-none" role="button" tabindex="0">
+        <div class="card relative w-full h-72 preserve-3d bg-white rounded-xl shadow-lg transition-transform duration-700">
+          <div class="absolute inset-0 backface-hidden p-8 text-center flex flex-col items-center justify-center">
+            <div class="bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-map-marked-alt text-4xl text-primary-600"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-secondary-800">Exploration</h3>
+            <p class="text-slate-600 text-sm">Continual search for new mineral deposits across Ethiopia.</p>
+          </div>
+          <div class="absolute inset-0 backface-hidden face-back p-8 flex flex-col items-center justify-center bg-sky-50 rounded-xl">
+            <i class="fas fa-map-marked-alt text-6xl text-sky-600 mb-4"></i>
+            <p class="text-sky-800 font-bold text-lg">Future Resources</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <footer class="py-16 border-t border-slate-700 bg-slate-900">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -397,6 +484,19 @@
         });
       })();
       document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.group').forEach((el) => {
+      el.addEventListener('click', () => {
+        el.classList.toggle('flipped');
+      });
+
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.classList.toggle('flipped');
+        }
+      });
+    });
     </script>
   </body>
 </html>
