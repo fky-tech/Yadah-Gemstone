@@ -97,13 +97,90 @@
         background-size: cover;
         background-position: center;
       }
-      .service-card {
+      .hero-pattern {
+        /* Replace with your own image URL */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url('building.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+            .service-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
       .service-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 35px rgba(0,0,0,0.1);
       }
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      /* The background image layer */
+      .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;                      /* hidden until hover */
+        transition: opacity 0.4s ease;
+        z-index: 0;
+      }
+
+      /* Keep card content above the image */
+      .service-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ---------- Unique hover images ---------- */
+      .card-road:hover::before {
+        background-image: url("road.png");
+        opacity: 1;
+      }
+      .card-building:hover::before {
+        background-image: url("const.png");
+        opacity: 1;
+      }
+      .card-design:hover::before {
+        background-image: url("arc.png");
+        opacity: 1;
+      }
+      .card-infra:hover::before {
+        background-image: url("infra.png");
+        opacity: 1;
+      }
+      .card-project:hover::before {
+        background-image: url("managing.png");
+        opacity: 1;
+      }
+      .card-safety:hover::before {
+        background-image: url("safety.png");
+        opacity: 1;
+      }
+      /* Make all text and icons inside the card white on hover */
+      .service-card:hover h3,
+      .service-card:hover p,
+      .service-card:hover i {
+        color: #ffffff !important; /* !important ensures it overrides Tailwind classes */
+      }
+
+      /* Optional: make the icon circle slightly darker for contrast */
+      .service-card:hover .bg-primary-50 {
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+      }
+
+      /* Smooth color transitions for text and icons */
+      .service-card h3,
+      .service-card p,
+      .service-card i {
+        transition: color 0.3s ease;
+      }
+
     </style>
   </head>
   <body class="antialiased text-neutral-800">
@@ -118,20 +195,19 @@
             <a href="index.html#home" class="hover:text-primary-500">Home</a>
             <a href="index.html#about" class="hover:text-primary-500">About</a>
             <div class="relative group">
-              <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
-                Our Sectors
-                <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-              </button>
-              <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 z-50 space-y-2">
-                <a href="mining.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Mining</a>
-                <a href="agriculture.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Agriculture</a>
-                <a href="construction.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Construction</a>
-                <a href="water-works.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Water Works</a>
-              </div>
-            </div>
+  <button class="inline-flex items-center gap-1 hover:text-primary-500" id="sectorsMenuBtn" aria-haspopup="true" aria-expanded="false">
+    Our Sectors
+    <svg class="h-4 w-4 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div id="sectorsMenu" class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute left-0 mt-2 z-50 space-y-2">
+    <a href="mining.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Mining</a>
+    <a href="agriculture.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Agriculture</a>
+    <a href="construction.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Construction</a>
+    <a href="water-works.html" class="block w-56 rounded-lg border border-slate-200 bg-white shadow-soft py-2 px-4 hover:bg-slate-50 transition-all hover:translate-x-1">Water Works</a>
+  </div>
+</div>
             <a href="index.html#ourapproach" class="hover:text-primary-500">Our Approach</a>
             <a href="index.html#members" class="hover:text-primary-500">Leadership</a>
-            <!-- <a href="index.html#contact" class="hover:text-primary-500">Contact</a> -->
           </nav>
           <div class="flex items-center gap-3">
             <a href="index.html#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary-500 px-4 py-2 text-white text-sm font-medium shadow-soft hover:bg-primary-600">Contact Us</a>
@@ -194,42 +270,42 @@
           <p class="text-neutral-600">We offer a full suite of construction solutions that prioritize quality, safety, and sustainable development.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-road bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-road text-2xl text-primary-600"></i>
             </div>
             <h3 class="font-semibold text-lg text-neutral-800 mb-2">Road Construction</h3>
             <p class="text-neutral-600">We build durable and reliable road networks that connect communities and support economic activity.</p>
           </div>
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-building bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-city text-2xl text-primary-600"></i>
             </div>
             <h3 class="font-semibold text-lg text-neutral-800 mb-2">Building Construction</h3>
             <p class="text-neutral-600">From commercial spaces to residential complexes, we design and construct buildings with precision and quality.</p>
           </div>
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-design bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-drafting-compass text-2xl text-primary-600"></i>
             </div>
             <h3 class="font-semibold text-lg text-neutral-800 mb-2">Architectural Design</h3>
             <p class="text-neutral-600">Our team provides comprehensive architectural design services, bringing innovative and functional concepts to life.</p>
           </div>
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-infra bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-hard-hat text-2xl text-primary-600"></i>
             </div>
             <h3 class="font-semibold text-lg text-neutral-800 mb-2">Infrastructure Projects</h3>
             <p class="text-neutral-600">We undertake large-scale infrastructure projects, including bridges and public works, to support national development.</p>
           </div>
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-project bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-hammer text-2xl text-primary-600"></i>
             </div>
             <h3 class="font-semibold text-lg text-neutral-800 mb-2">Project Management</h3>
             <p class="text-neutral-600">We offer end-to-end project management services, ensuring timely and cost-effective completion of all projects.</p>
           </div>
-          <div class="service-card bg-white rounded-xl p-6 shadow-soft text-center">
+          <div class="service-card card-safety bg-white rounded-xl p-6 shadow-soft text-center">
             <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fas fa-shield-alt text-2xl text-primary-600"></i>
             </div>

@@ -104,7 +104,48 @@
         transform: translateY(-5px);
         box-shadow: 0 15px 35px rgba(0,0,0,0.1);
       }
-      
+      .water-hero {
+      /* Replace with your own image path or URL */
+      background-image: url('water-work.png');
+      background-size: cover;          /* make sure it fills the section */
+      background-position: center;     /* keep it nicely centered */
+      background-repeat: no-repeat;
+     }
+     .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Normal state */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;                      /* hidden by default */
+      transition: opacity 0.4s ease;
+      z-index: 0;
+      /* replace with your own water image URL */
+      background-image: url("water.png");
+    }
+
+    /* Hover state */
+    .service-card:hover::before {
+      opacity: 1;                      /* fade in the water image */
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* Keep card content on top of the water image */
+    .service-card > * {
+      position: relative;
+      z-index: 1;
+    }
     </style>
 </head>
 <body class="antialiased text-neutral-800">
@@ -154,6 +195,7 @@
                 </div>
                 <a href="index.html#ourapproach" class="py-2" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Our Approach</a>
                 <a href="index.html#members" class="py-2" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Leadership</a>
+                <a href="index.html#contact" class="py-2" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Contact</a>
             </div>
         </div>
     </header>
@@ -219,7 +261,7 @@
                         <i class="fas fa-water text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Water Drilling</h3>
-                    <p class="text-neutral-600">Professional water drilling services using advanced equipment and techniques to access underground water sources.</p>
+                    <p>Professional water drilling services using advanced equipment and techniques to access underground water sources.</p>
                 </div>
 
                 <div class="service-card bg-white rounded-xl p-6 shadow-soft">
@@ -227,7 +269,7 @@
                         <i class="fas fa-drafting-compass text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Design & Planning</h3>
-                    <p class="text-neutral-600">Comprehensive water system design and planning services tailored to specific community and industrial needs.</p>
+                    <p>Comprehensive water system design and planning services tailored to specific community and industrial needs.</p>
                 </div>
 
                 <div class="service-card bg-white rounded-xl p-6 shadow-soft">
@@ -235,7 +277,7 @@
                         <i class="fas fa-eye text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Supervision</h3>
-                    <p class="text-neutral-600">Expert supervision of water projects to ensure quality, efficiency, and compliance with industry standards.</p>
+                    <p>Expert supervision of water projects to ensure quality, efficiency, and compliance with industry standards.</p>
                 </div>
 
                 <div class="service-card bg-white rounded-xl p-6 shadow-soft">
@@ -243,7 +285,7 @@
                         <i class="fas fa-pump-soap text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Pump Installation</h3>
-                    <p class="text-neutral-600">Professional installation of water pumps and related equipment for efficient water extraction and distribution.</p>
+                    <p>Professional installation of water pumps and related equipment for efficient water extraction and distribution.</p>
                 </div>
 
                 <div class="service-card bg-white rounded-xl p-6 shadow-soft">
@@ -251,7 +293,7 @@
                         <i class="fas fa-toolbox text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Maintenance Services</h3>
-                    <p class="text-neutral-600">Regular maintenance and repair services to ensure the longevity and optimal performance of water systems.</p>
+                    <p>Regular maintenance and repair services to ensure the longevity and optimal performance of water systems.</p>
                 </div>
 
                 <div class="service-card bg-white rounded-xl p-6 shadow-soft">
@@ -259,13 +301,13 @@
                         <i class="fas fa-flask text-2xl text-primary-600"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-2">Water Quality Testing</h3>
-                    <p class="text-neutral-600">Comprehensive water quality testing services to ensure safety and compliance with health standards.</p>
+                    <p>Comprehensive water quality testing services to ensure safety and compliance with health standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-white text-secondary-900">
+<section class="py-16 bg-white text-secondary-900">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -340,7 +382,7 @@
   </div>
 </section>
 
-<section class="py-16 bg-white">
+    <section class="py-16 bg-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="bg-primary-800 text-white rounded-2xl p-8 md:p-12 text-center shadow-soft">
           <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Ready to Build with Us?</h2>
